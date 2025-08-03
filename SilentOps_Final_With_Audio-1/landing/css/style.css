@@ -1,0 +1,108 @@
+
+body {
+  background-color: #0A3D2E;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+}
+
+.container {
+  padding: 4rem;
+}
+
+/* Effet 1 : Glitch background */
+.background-glitch {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(90deg, #000 0px, #0A3D2E 2px, #000 4px);
+  opacity: 0.05;
+  animation: glitchmove 1s infinite linear;
+  z-index: -1;
+}
+
+@keyframes glitchmove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 0; }
+}
+
+/* Effet 2 : fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Effet 3 : fade-in-on-scroll */
+.fade-in-on-scroll {
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* Effet 4 : zoom-in */
+.zoom-in {
+  transform: scale(0.95);
+  animation: zoomIn 1s ease forwards;
+}
+
+@keyframes zoomIn {
+  to { transform: scale(1); }
+}
+
+/* Effet 5 : tilt */
+.tilt {
+  transition: transform 0.3s ease;
+}
+
+.tilt:hover {
+  transform: rotateZ(-1deg) scale(1.02);
+}
+
+/* Effet 6 : highlight */
+.highlight blockquote {
+  border-left: 4px solid #4BBF7A;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #4BBF7A;
+}
+
+/* Effet 7 : blur-on-scroll */
+.blur-on-scroll {
+  filter: blur(0px);
+  transition: filter 0.5s ease;
+}
+
+/* Effet 8 : reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effet 9 : audio mute btn */
+#mute-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  background: #4BBF7A;
+  color: #0A3D2E;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
